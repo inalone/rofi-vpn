@@ -7,11 +7,6 @@ set -o pipefail
 readonly PROGNAME=$(basename "$0")
 readonly ARGS=("$@")
 
-readonly POSITION=3
-readonly WIDTH=-30
-readonly XOFF=-103
-readonly YOFF=22
-
 declare CONNECTION_LIST=""
 declare CONNECTION_STATE=false
 declare MENU_TITLE=""
@@ -82,10 +77,7 @@ determine_menu_title() {
 }
 
 generate_rofi_menu() {
-	local length="$(($(echo "$CONNECTION_LIST" | wc -l) + 2))"
-	local layout=(-location "$POSITION" -width "$WIDTH" -xoffset "$XOFF" -yoffset "$YOFF" -lines "$length")
-
-	PICKED_ENTRY=$(echo -e "$CONNECTION_LIST" | rofi -dmenu -p "$MENU_TITLE" "${layout[@]}")
+	PICKED_ENTRY=$(echo -e "$CONNECTION_LIST" | rofi -dmenu -p "$MENU_TITLE")
 
 	return 0
 }

@@ -1,7 +1,7 @@
 # Rofi VPN menu
 
 ## This fork
-This fork removed the strange font setting within the script, as well as looking for connection of type 'Wireguard' instead of 'vpn'.
+This fork removed the strange font + layout setting within the script, as well as looking for connection of type 'Wireguard' instead of 'vpn'.
 
 ## Table of Contents
 * [`Description`](#description): Generic description of this script.
